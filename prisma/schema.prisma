@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  // url      = env("postgresql://watsapp_owner:npg_IJ7lcYLQEw9q@ep-dawn-heart-a5zmb6nw-pooler.us-east-2.aws.neon.tech/watsapp?sslmode=require")
+  url      = "postgresql://watsapp_owner:npg_IJ7lcYLQEw9q@ep-dawn-heart-a5zmb6nw-pooler.us-east-2.aws.neon.tech/watsapp?sslmode=require"
+}
+model User{
+  id Int @id @default(autoincrement())
+  email String @unique
+  firstName String
+  surName String
+  profileImage String ?
+  createdAt DateTime @default(now())
+  description String?
+  websiteLink String ?
+  dateOfBirth String
+  Gender  Gender
+  active Boolean @default(false)
+  lastActiveAt DateTime ?
+  otp Int ?
+  verified Boolean @default(false)
+  password String 
+  userLocation String ?
+  userDeviceOperatingSystem String ?
+
+
+
+}
+enum Gender{
+  MALE
+  FEMALE
+  OTHER
+
+}
