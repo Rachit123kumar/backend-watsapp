@@ -23,7 +23,11 @@ const wss = new WebSocketServer({ server: httpServer })
 const chatManager = new ChatManager()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: ["http://localhost:3000", "https://watsappfrontend.learngames.shop"],
+    credentials: true,
+  }));
+  
 
 
 app.post('/user/login', login)
