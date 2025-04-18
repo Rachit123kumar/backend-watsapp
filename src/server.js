@@ -25,7 +25,7 @@ const chatManager = new ChatManager()
 app.use(express.json())
 app.use(cors({
     origin: ["http://localhost:3000", "https://watsappfrontend.learngames.shop"],
-    credentials: true,
+    credentials: false,
   }));
   
 
