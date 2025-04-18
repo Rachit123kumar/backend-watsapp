@@ -231,4 +231,5 @@ wss.on('close', () => {
     console.log('A user has been disconnected')
 })
 mongoose.connect(process.env.MONGOOSE_URL)
+console.log("server is runiing on ",process.env.PORT)
 // server.listen(3001, () => console.log("Your server is listening on port 3000"))
