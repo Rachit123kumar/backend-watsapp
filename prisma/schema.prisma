@@ -10,8 +10,8 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  // url      = env("postgresql://watsapp_owner:npg_IJ7lcYLQEw9q@ep-dawn-heart-a5zmb6nw-pooler.us-east-2.aws.neon.tech/watsapp?sslmode=require")
-  url      = "postgresql://watsapp_owner:npg_IJ7lcYLQEw9q@ep-dawn-heart-a5zmb6nw-pooler.us-east-2.aws.neon.tech/watsapp?sslmode=require"
+  url      = env("DATABASE_URL")
+  
 }
 model User{
   id Int @id @default(autoincrement())
