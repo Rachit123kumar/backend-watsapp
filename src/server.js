@@ -16,13 +16,13 @@ import { ChatManager } from "./lib/ChatManagers.js";
 import { URL } from "node:url";
 
 
-dotenv.config()
+dotenv.config() 
 const app = express();
+app.use(express.json())
 const httpServer = app.listen(process.env.PORT)
 const wss = new WebSocketServer({ server: httpServer })
 const chatManager = new ChatManager()
 
-app.use(express.json())
 // app.use(cors({
 //     origin: ["http://localhost:3000", "https://watsappfrontend.learngames.shop"],
 //     credentials: false,
