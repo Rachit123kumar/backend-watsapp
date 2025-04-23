@@ -27,7 +27,13 @@ const chatManager = new ChatManager()
 //     origin: ["http://localhost:3000", "https://watsappfrontend.learngames.shop"],
 //     credentials: false,
 //   }));
-app.use(cors())
+// app.use(cors())
+app.use(cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+    allowedHeaders: ["Authorization", "Content-Type"]
+  }));
   
 
 
